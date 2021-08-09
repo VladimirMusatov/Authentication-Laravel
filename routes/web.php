@@ -39,7 +39,7 @@ Route::name('user.')->group(function(){
             return  redirect (route('user.private'));
         }
         return  view('registration');
-    })->name('registration  ');
+    })->name('registration');
 
     //Route::post('/registration',[]);
 });

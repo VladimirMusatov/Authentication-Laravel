@@ -2,10 +2,9 @@
 
 @section('content')
 
+<h1>Регистрация</h1>
 
-<h1>Вход</h1>
-
-<form class="w-25" method="POST" action="{{route('user.login')}}" >
+<form class="w-25" method="POST" action="{{route('user.registration')}}" >
 	@csrf
 	<div class="mb-3">
 		<label for="email" class="form-label">Ваш email</label>
@@ -26,4 +25,5 @@
 	<button type="submit" class="btn btn-primary">Войти</button>
 
 </form>
+
 @endsection('content')
