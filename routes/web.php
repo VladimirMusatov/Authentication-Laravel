@@ -30,7 +30,7 @@ Route::name('user.')->group(function(){
 
     })->name('login');
 
-    //Route::post('/login',[])
+    Route::post('/login',[\App\Http\Controllers\loginController::class, 'login']);
 
     Route::get('/logout',function(){
         Auth::logout();
