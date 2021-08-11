@@ -16,7 +16,7 @@ class UserTable extends Migration
     {
         //nullable(folse) = Поле не может быть пустым
         //nullable(true) = Поле может быть пустым
-        Schema::create('user',function(Blueprint $table){
+        Schema::create('users',function(Blueprint $table){
             $table->increments('id');
             $table->string('email', 255)->nullable(false)->unique('email');
             $table->string('password', 255)->nullable(false);

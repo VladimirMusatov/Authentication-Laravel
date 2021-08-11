@@ -26,7 +26,7 @@ Route::name('user.')->group(function(){
         if(Auth::check()){
             return redirect(route('user.private'));
         }
-        return  view('login');
+        return view('login');
 
     })->name('login');
 
@@ -41,5 +41,5 @@ Route::name('user.')->group(function(){
         return  view('registration');
     })->name('registration');
 
-    //Route::post('/registration',[]);
+    Route::post('/registration',[\App\Http\Controllers\RegisterController::class, 'save']);
 });
