@@ -32,7 +32,10 @@ Route::name('user.')->group(function(){
 
     //Route::post('/login',[])
 
-    //Route::get('/logout',[])->name('logout')
+    Route::get('/logout',function(){
+        Auth::logout();
+        return redirect('/');
+    })->name('logout');
 
     Route::get('/registration',function (){
         if(Auth::check ()){

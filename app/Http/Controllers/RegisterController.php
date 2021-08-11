@@ -20,6 +20,12 @@ class RegisterController extends Controller
             'password'  => 'required',
         ]);
 
+        if(User::where('email', $validateField['email'])->exists()){
+        return redirect(route('user.registration'))->withErrors([
+            'email' => 'Такой пользователь уже зарегестрирован'
+            ]);
+        }
+
         $user = User::create($validateField);
         if($user){
             Auth::login($user);
